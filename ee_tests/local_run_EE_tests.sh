@@ -45,8 +45,17 @@ node_modules/protractor/bin/protractor ${PROTRACTOR_JS} --suite $TEST_SUITE --pa
 
 TEST_RESULT=$?
 
-# cat log file to stdout 
-# cat $LOGFILE
+
+# cat log file to stdout
+if [ "$CAT_LOGFILE" == "true" ]; then
+  echo
+  echo "------------------------------------------"
+  echo "Log file:"
+  cat $LOGFILE
+  echo "------------------------------------------"
+  echo
+fi
+
 
 # Cleanup webdriver-manager and web app processes
 fuser -k -n tcp 4444
