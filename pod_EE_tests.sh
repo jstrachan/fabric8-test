@@ -5,8 +5,12 @@ export NODE_ENV=inmemory
 export TEST_PLATFORM="${TARGET_PLATFORM}"
 #export CAT_LOGFILE="true"
 
-echo "Running the E2E tests in a pod as user ${USERNAME} on console URL: ${TARGET_URL} with platform ${TEST_PLATFORM}"
+# lets default to a single quickstart for now
+if [ -z "$QUICKSTART" ]; then
+  QUICKSTART="Vert.x HTTP Booster"
+fi
 
+echo "Running the E2E tests in a pod as user ${USERNAME} on console URL: ${TARGET_URL} platform: ${TEST_PLATFORM} quickstart: ${QUICKSTART}"
 
 cd ee_tests
 
