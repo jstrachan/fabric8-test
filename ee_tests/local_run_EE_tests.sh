@@ -5,7 +5,12 @@ set -x
 DEFAULT_TEST_SUITE="runTest"
 TEST_SUITE=${6:-$DEFAULT_TEST_SUITE}
 
-LOGFILE=$(pwd)/functional_tests.log
+DIR="$(pwd)"
+if [ -z "$DIR" ]; then
+  DIR="."
+fi
+
+LOGFILE=${DIR}/functional_tests.log
 echo Using logfile $LOGFILE 
 
 # lets make sure we use the local protractor webdriver-manager
