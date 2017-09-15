@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
-echo "Running the E2E tests in a pod as user ${USERNAME} on console URL: ${TARGET_URL}"
-
 export PROTRACTOR_CONFIG_JS="protractorEE-env.config.js"
 export NODE_ENV=inmemory
+export TEST_PLATFORM="${TARGET_PLATFORM}"
+
+echo "Running the E2E tests in a pod as user ${USERNAME} on console URL: ${TARGET_URL} with platform ${TEST_PLATFORM}"
+
 
 cd ee_tests
 
