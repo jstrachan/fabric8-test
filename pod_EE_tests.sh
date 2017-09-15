@@ -6,11 +6,11 @@ export TEST_PLATFORM="${TARGET_PLATFORM}"
 #export CAT_LOGFILE="true"
 
 # lets default to a single quickstart for now
-if [ -z "$QUICKSTART" ]; then
-  QUICKSTART="Vert.x HTTP Booster"
+if [ -z "$TEST_QUICKSTART" ]; then
+  TEST_QUICKSTART="Vert.x HTTP Booster"
 fi
 
-echo "Running the E2E tests in a pod as user ${USERNAME} on console URL: ${TARGET_URL} platform: ${TEST_PLATFORM} quickstart: ${QUICKSTART}"
+echo "Running the E2E tests in a pod as user ${USERNAME} on console URL: ${TARGET_URL} platform: ${TEST_PLATFORM} quickstart: ${TEST_QUICKSTART}"
 
 cd ee_tests
 
